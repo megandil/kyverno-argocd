@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kyverno-app
+  name: temp-app
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://github.com/megandil/kyverno-argocd.git'
-    path: kyverno-app
+    path: temp-app
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: kyverno
+    namespace: temperaturas
   syncPolicy:
     automated: {}
   ignoreDifferences:
