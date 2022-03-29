@@ -1,0 +1,21 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: restrict-nodeport
+  annotations:
+    policies.kyverno.io/description: >-
+     Con esta política vamos bloquear la creación de los servicios NodePort.
+spec:
+  validationFailureAction: enforce
+  rules:
+  - name: block-node-port
+    match:
+      resources:
+        kinds:
+        - Service
+    validate:
+      message: "Servicios de tipo NodePort no se encuentran permitidos."
+      pattern:
+        spec:
+          type: "!NodePort"
+
