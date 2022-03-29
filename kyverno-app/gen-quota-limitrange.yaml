@@ -17,6 +17,13 @@ spec:
       resources:
         kinds:
         - Namespace
+    exclude:
+      any:
+      - resources:
+          namespaces:
+          - argocd
+          - ingress-nginx
+          - default
     generate:
       kind: ResourceQuota
       name: resourcequota-default
@@ -34,6 +41,13 @@ spec:
       resources:
         kinds:
         - Namespace
+    exclude:
+      any:
+      - resources:
+          namespaces:
+          - argocd
+          - ingress-nginx
+          - default
     generate:
       kind: LimitRange
       name: limitrange-default

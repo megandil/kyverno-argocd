@@ -10,6 +10,13 @@ spec:
         - resources:
             kinds:
             - Pod
+      exclude:
+        any:
+        - resources:
+            namespaces:
+            - argocd
+            - ingress-nginx
+            - default
       mutate:
         patchStrategicMerge:
           spec:
