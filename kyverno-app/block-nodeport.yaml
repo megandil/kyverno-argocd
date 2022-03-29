@@ -13,16 +13,8 @@ spec:
       resources:
         kinds:
         - Service
-    exclude:
-      any:
-      - resources:
-          namespaces:
-          - argocd
-          - ingress-nginx
-          - default
     validate:
       message: "Servicios de tipo NodePort no se encuentran permitidos."
       pattern:
         spec:
           type: "!NodePort"
-
