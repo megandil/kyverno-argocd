@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kyverno-app
+  namespace: argocd
+project: default
+source:
+  repoURL: 'https://github.com/megandil/kyverno-argocd.git'
+  path: kyverno-app
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: kyverno
+syncPolicy:
+  automated: {}
+ignoreDifferences:
+  - group: kyverno.io
+    kind: ClusterPolicy
+    jqPathExpressions:
+      - '.spec.rules[] | select(.name|test("autogen-."))'
