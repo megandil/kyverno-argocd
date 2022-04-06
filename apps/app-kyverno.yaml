@@ -14,8 +14,6 @@ spec:
     namespace: kyverno
   syncPolicy:
     automated: {}
-    syncOptions:
-    - CreateNamespace=true
   ignoreDifferences:
     - group: kyverno.io
       kind: ClusterPolicy

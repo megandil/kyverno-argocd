@@ -14,5 +14,3 @@ spec:
     namespace: policy-reporter
   syncPolicy:
     automated: {}
-    syncOptions:
-    - CreateNamespace=true
