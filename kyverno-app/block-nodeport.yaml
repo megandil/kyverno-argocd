@@ -8,7 +8,7 @@ metadata:
 spec:
   validationFailureAction: enforce
   rules:
-  - name: block-node-port
+  - name: block-nodeport
     match:
       resources:
         kinds:
