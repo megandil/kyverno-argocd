@@ -17,6 +17,7 @@ spec:
             - argocd
             - ingress-nginx
             - default
+            - policy-reporter
       mutate:
         patchStrategicMerge:
           spec:

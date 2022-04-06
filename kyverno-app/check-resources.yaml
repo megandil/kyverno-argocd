@@ -18,6 +18,7 @@ spec:
           - argocd
           - ingress-nginx
           - default
+          - policy-reporter
     validate:
       message: "All containers must have CPU and memory resource requests and limits defined."
       pattern:
