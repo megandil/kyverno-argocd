@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: temp-app
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
@@ -13,5 +15,4 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: temperaturas
   syncPolicy:
-    automated: 
-      selfHeal: true
+    automated: {}
