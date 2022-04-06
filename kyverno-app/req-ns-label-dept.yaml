@@ -6,7 +6,7 @@ metadata:
 # En `spec` definimoslas propiedades de la política.
 spec:
   # El parámetro `validationFailureAction` le dice a Kyverno si permite las peticiones pero las reporta (`audit`) o las bloquea (`enforce`).
-  validationFailureAction: enforce
+  validationFailureAction: audit
   # En el parámetro `rules` configuramos una o más reglas que se deben cumplir.
   rules:
   - name: requiere-ns-etiqueta-dept
