@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/megandil/kyverno-argocd.git'
     path: kyverno-app
-    targetRevision: main
+    targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kyverno
