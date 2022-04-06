@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: policy-reporter-ui-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/megandil/kyverno-argocd.git'
+    path: policy-ui-reporter-app
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: policy-reporter
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
