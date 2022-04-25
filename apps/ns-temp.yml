@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: temperaturas
   labels:
-    departamento: produccion
+    departamento: desarrollo
