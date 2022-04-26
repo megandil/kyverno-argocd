@@ -1,6 +1,10 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
+  annotations:
+    policies.kyverno.io/type: mutation
+    policies.kyverno.io/description: >-
+      Busca los Pods que utilicen imágenes "latest" para cambiar su imagePullPolicy a "IfNotPresent"  
   name: cambiar-image-pull-policy
 spec:
   rules:
@@ -22,7 +26,7 @@ spec:
         patchStrategicMerge:
           spec:
             containers:
-              # match images which end with :latest
+              # Busca imágenes que su versión sea latest
               - (image): "*:latest"
-                # set the imagePullPolicy to "IfNotPresent"
+                # Si coincide cambia su política de pull image a IfNotPresent
                 imagePullPolicy: "IfNotPresent"
