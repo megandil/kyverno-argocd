@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: contenedor-temperaturas
-        image: iesgn/temperaturas_frontend
+        image: iesgn/temperaturas_frontend:latest
         ports:
           - name: http-server
             containerPort: 3000
@@ -76,7 +76,7 @@ spec:
     spec:
       containers:
         - name: contendor-servidor-temperaturas
-          image: iesgn/temperaturas_backend
+          image: iesgn/temperaturas_backend:latest
           ports:
             - name: api-server
               containerPort: 5000
