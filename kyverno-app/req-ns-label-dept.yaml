@@ -2,6 +2,8 @@ apiVersion: kyverno.io/v1
 # El kind `ClusterPolicy` indica que la política se configura en todo el cluster.
 kind: ClusterPolicy
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   name: requiere-ns-etiqueta-dept
 # En `spec` definimoslas propiedades de la política.
 spec:
